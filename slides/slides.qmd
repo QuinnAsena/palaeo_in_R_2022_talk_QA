@@ -1,0 +1,240 @@
+---
+title: "Pseudoproxy modelling of uncertainties in palaeoecological data."
+author: "Quinn Asena, George Perry, Janet Wilmshurst"
+institute: "University of Auckland, UW-Madison"
+date: today
+bibliography: refs.bib
+from: markdown+emoji
+format:
+  revealjs:
+    theme: default
+#    backgroundcolor: "#44444c"
+#    fontcolor: "white"
+    preview-links: true
+    highlight-style: github
+    slide-number: c/t
+    width: 1600
+    height: 900
+# title-slide-attributes:
+#  data-background-color: "#36365a"
+---
+
+## The question: is the past recoverable from the data?
+
+Proxy data are the product of multiple sources of uncertainty
+
+- Environmental processes
+
+- Field and laboratory methods
+
+- Data processing methods
+
+## Why it matters
+
+Palaeoecology moving from descriptive to quantitative:
+
+- Palaeoecology to inform the future requires robust statistical approaches
+
+- One method to assess environmental uncertainties, sampling strategies and statistical methods is in simulation
+
+## Approach
+
+- Simulate core samples that mimic the statistical properties of empirica data
+
+- Simulate uncertainties: process and observer error that affect the data
+
+- Assess how *statistical inferences* are affected by those uncertainties
+
+## Key concepts
+
+- Virtual ecology [@zurell2010]
+
+- Proxy system modelling [@evans2013]
+
+- Pseudoproxy experiments [@mann2002]
+
+- 
+
+## Virtual ecology
+
+Virtual ecology is a framework for assessing sampling and analytical methods in simulation consisting of:
+
+1. an ecological model that generates synthetic data
+
+  i) a degradation model (environmental processes)
+
+2. a simulated observational process (a sampling model) that samples the synthetic data
+
+3. an analytical process or statistical model applied to both sets of data
+
+4. an assessment of the results
+
+## Virtual ecology
+
+:::: {.columns}
+::: {.column width="50%"}
+#### Perfect knowledege, imperfect world
+
+- Simulated data and observational processes
+
+- Advantage of benchmark/control data
+
+- Advantage of replication
+:::
+
+::: {.column width="50%"}
+#### Perfect world, imperfect knowledge
+
+- Sampled data with no benchmark/control
+
+- Advantage of being reality
+
+:::
+::::
+
+## Proxy system modelling
+
+Describes the process by which environmental change is recorded as an observable signal in an archive:
+
+1. environmental drivers (e.g., climatic variability)
+
+2. a sensor (a physical, biological or chemical component of the system that responds to the environmental drivers)
+
+3. an archive (the medium in which the response of the sensor is recorded such as a lake sediment)
+
+4. observations drawn from the archive
+
+![Proxy Ststem Modelling framework, from @evans2013](./images/psm.png)
+
+
+## Pseudoproxy experiments
+
+Borrowing the term psedoproxies from climateology:
+
+- pseudoproxies are simulated data or modified observational data
+
+- mimic the statistical properties of empirical data (hopefully)
+
+- pseudoproxy experiments are similar to virtual ecology
+
+
+## Simulating an archive
+
+Simulate:
+
+1. environmental driver patterns over time (driver model)
+
+2. species that respond to the drivers (sensor model)
+
+3. accumulation rate and time-span and degradation (archive model)
+
+4. observational process (sampling model)
+
+5. analyse the pseudoproxies (assessment)
+
+
+## Simulating pseudoproxies {.scrollable}
+
+- represent a multi-driver environment that allows for driver interactions and synergies (@williams2011)
+
+- include underlying ecological dynamics to generate a multi-species pseudoproxy archive that can undergo community turnover
+
+- recreate core formation processes of accumulation rates and time-span and virtually recreate the observational processes
+
+
+## Simulating pseudoproxies {.scrollable}
+
+:::{.panel-tabset}
+# Model vis
+![Simulating pseudoproxies](./images/walk_lin_gradual_grid_plot.png){width=60%}
+
+# 'Error-free'
+![Partial output of 20 randomly selected species](./images/taxa_plot_N.png)
+:::
+
+## Ruining pseudoproxies
+:::: {.columns}
+::: {.column width="30%"}
+- Example species from simgle replicate
+
+- Mixing
+
+- Mixing + sub-sampling
+
+- Mixing + sub-sampling + proxy counting
+:::
+
+::: {.column width="70%"}
+![Degradation process](./images/degradation_process_disturbed_for_export.png){width="80%"}
+:::
+::::
+
+## Ruined pseudoproxies
+
+![Pseudoproxy output after mixing, sub-sampling and proxy counting](./images/taxa_plot_mix10_sam10_cnt400.png)
+
+## Analyses
+
+Ok, now we have generated the data, let's analyse it. Each replicate results in 1210 datasets from the 'error-free' to the most uncertain:
+
+- Fisher Information
+
+- Principal curves
+
+## Scenario 1
+
+:::{.panel-tabset}
+# Pseudoproxies
+![](./images/archive_half_half_walk_lin_forces.png){fig-align="center"}
+
+# Fisher Information
+![](./images/fi_plot.png){width="80%" fig-align="center"}
+
+# Principal curves
+![](./images/prc_pc_plot.png){width="80%" fig-align="center"}
+:::
+
+## Scenario 2
+
+:::{.panel-tabset}
+# Pseudoproxies
+![](./images/archive_half_half_abrupt_forces.png){fig-align="center"}
+
+# Fisher Information
+![](./images/fi_plot_abrupt.png){width="80%" fig-align="center"}
+
+# Principal curves
+![](./images/prc_pc_plot_abrupt.png){width="80%" fig-align="center"}
+:::
+
+
+## Assessing statistical inference across replicates {.scrollable}
+
+:::{.panel-tabset}
+# Tab 1
+![Simulating pseudoproxies](./images/walk_step_fisher_metrics_dotplot.png)
+
+# Tab 2
+![Things](./images/walk_step_fisher_two_dim_metrics_mean_plot.png)
+
+# Tab 3
+![Things](./images/walk_step_fisher_three_dim_grid_plot.png)
+:::
+
+
+## Application to empirical
+
+
+
+## What I haven't said
+
+- Assessing error rates
+
+- Chronological uncertainty
+
+## Acknowledgements
+
+George, Janet, Jack, Tony, Biological heritage, NSF
+
+
+## References
