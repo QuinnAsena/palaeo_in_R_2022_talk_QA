@@ -11,6 +11,7 @@ format:
 #    backgroundcolor: "#44444c"
 #    fontcolor: "white"
     preview-links: true
+    fig-align: center
     highlight-style: github
     slide-number: c/t
     width: 1600
@@ -19,31 +20,52 @@ format:
 #  data-background-color: "#36365a"
 ---
 
-## The question: is the past recoverable from the data?
+## The problem
 
 Proxy data are the product of multiple sources of uncertainty
 
 - Environmental processes
 
+  - bioturbation, taphonomy, variable sedimentation rates...
+
 - Field and laboratory methods
+
+  - core collection methods, sub-sampling strategy, pollen counting...
 
 - Data processing methods
 
-## Why it matters
+  - age-depth modelling, interpolation...
 
-Palaeoecology moving from descriptive to quantitative:
+
+## The question: is the past recoverable from the data?
+
+::::{.columns}
+:::{.column}
+### Why it matters
+
+- Palaeoecology moving from descriptive to quantitative
 
 - Palaeoecology to inform the future requires robust statistical approaches
 
-- One method to assess environmental uncertainties, sampling strategies and statistical methods is in simulation
+- Advances in lab methods, data availability, and statistics is making more
+:::
 
-## Approach
+:::{.column}
+### What we can do about it
 
-- Simulate core samples that mimic the statistical properties of empirica data
+- One method to assess uncertainties is in simulation
+
+:::
+::::
+
+## Approach and take-home
+
+- Simulate core samples containing proxies that mimic the statistical properties of empirical data
 
 - Simulate uncertainties: process and observer error that affect the data
 
 - Assess how *statistical inferences* are affected by those uncertainties
+
 
 ## Key concepts
 
@@ -53,7 +75,10 @@ Palaeoecology moving from descriptive to quantitative:
 
 - Pseudoproxy experiments [@mann2002]
 
-- 
+- Other key refs: 
+    - @blaauw2010a
+
+    - @williams2011
 
 ## Virtual ecology
 
@@ -61,7 +86,7 @@ Virtual ecology is a framework for assessing sampling and analytical methods in 
 
 1. an ecological model that generates synthetic data
 
-  i) a degradation model (environmental processes)
+    1a. a degradation model
 
 2. a simulated observational process (a sampling model) that samples the synthetic data
 
@@ -69,7 +94,7 @@ Virtual ecology is a framework for assessing sampling and analytical methods in 
 
 4. an assessment of the results
 
-## Virtual ecology
+## Virtual ecology and empirical ecology
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -80,6 +105,8 @@ Virtual ecology is a framework for assessing sampling and analytical methods in 
 - Advantage of benchmark/control data
 
 - Advantage of replication
+
+- Able to systematically introduce uncertainty
 :::
 
 ::: {.column width="50%"}
@@ -109,16 +136,16 @@ Describes the process by which environmental change is recorded as an observable
 
 ## Pseudoproxy experiments
 
-Borrowing the term psedoproxies from climateology:
+Borrowing the term "*psedoproxies*" from climateology:
 
 - pseudoproxies are simulated data or modified observational data
 
-- mimic the statistical properties of empirical data (hopefully)
+- mimic the statistical properties of empirical data
 
 - pseudoproxy experiments are similar to virtual ecology
 
 
-## Simulating an archive
+## Simulating a pseudoproxy archive
 
 Simulate:
 
@@ -135,7 +162,7 @@ Simulate:
 
 ## Simulating pseudoproxies {.scrollable}
 
-- represent a multi-driver environment that allows for driver interactions and synergies (@williams2011)
+- represent a multi-driver environment that allows for driver interactions and synergies
 
 - include underlying ecological dynamics to generate a multi-species pseudoproxy archive that can undergo community turnover
 
@@ -145,47 +172,49 @@ Simulate:
 ## Simulating pseudoproxies {.scrollable}
 
 :::{.panel-tabset}
-# Model vis
-![Simulating pseudoproxies](./images/walk_lin_gradual_grid_plot.png){width=60%}
+# Model visualistion
+![](./images/walk_lin_gradual_grid_plot.png){width=60% fig-align="center"}
 
-# 'Error-free'
-![Partial output of 20 randomly selected species](./images/taxa_plot_N.png)
+# 'Error-free' output
+![Partial output of 20 randomly selected species](./images/taxa_plot_N.png){width="90%"}
 :::
 
 ## Ruining pseudoproxies
 :::: {.columns}
 ::: {.column width="30%"}
-- Example species from simgle replicate
+A. Example species from single replicate
 
-- Mixing
+B. Mixing
 
-- Mixing + sub-sampling
+C. Mixing + sub-sampling
 
-- Mixing + sub-sampling + proxy counting
+D. Mixing + sub-sampling + proxy counting
 :::
 
 ::: {.column width="70%"}
-![Degradation process](./images/degradation_process_disturbed_for_export.png){width="80%"}
+![](./images/degradation_process_disturbed_for_export.png){width="80%"}
 :::
 ::::
 
-## Ruined pseudoproxies
+## Ruined pseudoproxies {.scrollable}
 
-![Pseudoproxy output after mixing, sub-sampling and proxy counting](./images/taxa_plot_mix10_sam10_cnt400.png)
+![](./images/taxa_plot_mix10_sam10_cnt400.png){height="120%"}
 
 ## Analyses
 
-Ok, now we have generated the data, let's analyse it. Each replicate results in 1210 datasets from the 'error-free' to the most uncertain:
+Ok, now we have generated the data, let's analyse it. Two analyses:
 
 - Fisher Information
 
 - Principal curves
 
-## Scenario 1
+Demonstrating two scenarios with different driving environments.
+
+## Scenario 1 {.scrollable}
 
 :::{.panel-tabset}
 # Pseudoproxies
-![](./images/archive_half_half_walk_lin_forces.png){fig-align="center"}
+![](./images/archive_half_half_walk_lin_forces.png){width="200%" fig-align="center"}
 
 # Fisher Information
 ![](./images/fi_plot.png){width="80%" fig-align="center"}
@@ -194,11 +223,11 @@ Ok, now we have generated the data, let's analyse it. Each replicate results in 
 ![](./images/prc_pc_plot.png){width="80%" fig-align="center"}
 :::
 
-## Scenario 2
+## Scenario 2 {.scrollable}
 
 :::{.panel-tabset}
 # Pseudoproxies
-![](./images/archive_half_half_abrupt_forces.png){fig-align="center"}
+![](./images/archive_half_half_abrupt_forces.png){width="200%" fig-align="center"}
 
 # Fisher Information
 ![](./images/fi_plot_abrupt.png){width="80%" fig-align="center"}
@@ -208,25 +237,63 @@ Ok, now we have generated the data, let's analyse it. Each replicate results in 
 :::
 
 
-## Assessing statistical inference across replicates {.scrollable}
+## Assessing uncertainties across replicates
+
+ Each replicate results in 1210 datasets from the 'error-free' to the most uncertain, per scenario :scream:.
+
+::::{.columns}
+:::{.column width="40%"}
+Across *replicates* for each of the 1210 datasets:
+
+1. extract features from the FI and PrC
+
+    - feature analysis reduces the FI and PrC to one dimension
+
+2. calculate the distance between each dataset from the 'error-free' to the most uncertain
+
+3. make cool visulisations!
+:::
+
+:::{.column width="60%"}
+![](./images/miracle_occurs.png){height="50%"}
+:::
+::::
+
+## Assessing uncertainties across replicates
+
+**Quantify the difference between the 'error-free' archive and each level of uncertainty.** The following is an example from scenario 1
+
+
+## Assessing uncertainties across replicates {.scrollable}
 
 :::{.panel-tabset}
-# Tab 1
-![Simulating pseudoproxies](./images/walk_step_fisher_metrics_dotplot.png)
+# Single uncertainty
+![](./images/walk_step_fisher_metrics_dotplot.png)
 
-# Tab 2
-![Things](./images/walk_step_fisher_two_dim_metrics_mean_plot.png)
+# Two combined
+![](./images/walk_step_fisher_two_dim_metrics_mean_plot.png)
 
-# Tab 3
-![Things](./images/walk_step_fisher_three_dim_grid_plot.png)
+# All three!
+![](./images/walk_step_fisher_three_dim_grid_plot.png){height="70%"}
 :::
 
 
 ## Application to empirical
 
+Simulation methods can be integrated with empirical studies to:
+
+-	a priori help shape field sampling methods: e.g., number of core samples (across a region or local replication) required for a given research question.
+
+- understand the sub-sampling and count resolution required to increase the likelihood of detecting a hypothesised signal in the data.
+
+- accompany empirical study to test hypotheses about the underlying dynamics that may cause an observed pattern in the data.
+
+- assess whether inferences made from the data are robust to uncertainty.
 
 
-## What I haven't said
+## What I haven't covered
+
+"All models are wrong, some are useful" @box1979
 
 - Assessing error rates
 
@@ -234,7 +301,11 @@ Ok, now we have generated the data, let's analyse it. Each replicate results in 
 
 ## Acknowledgements
 
-George, Janet, Jack, Tony, Biological heritage, NSF
+- George Perry and Janet Wilmshurs
 
+- Jack Williams and Tony Ives
+
+- Biological heritage and the National Science Foundation
+ 
 
 ## References

@@ -341,30 +341,49 @@
   <h1 class="title">Pseudoproxy modelling of uncertainties in palaeoecological data.</h1>
   <p class="author">Quinn Asena, George Perry, Janet Wilmshurst</p>
   <p class="institute">University of Auckland, UW-Madison</p>
-  <p class="date">11/1/22</p>
+  <p class="date">11/2/22</p>
 </section>
 
-<section id="the-question-is-the-past-recoverable-from-the-data" class="slide level2">
-<h2>The question: is the past recoverable from the data?</h2>
+<section id="the-problem" class="slide level2">
+<h2>The problem</h2>
 <p>Proxy data are the product of multiple sources of uncertainty</p>
 <ul>
-<li><p>Environmental processes</p></li>
-<li><p>Field and laboratory methods</p></li>
-<li><p>Data processing methods</p></li>
+<li><p>Environmental processes</p>
+<ul>
+<li>bioturbation, taphonomy, variable sedimentation rates…</li>
+</ul></li>
+<li><p>Field and laboratory methods</p>
+<ul>
+<li>core collection methods, sub-sampling strategy, pollen counting…</li>
+</ul></li>
+<li><p>Data processing methods</p>
+<ul>
+<li>age-depth modelling, interpolation…</li>
+</ul></li>
 </ul>
 </section>
-<section id="why-it-matters" class="slide level2">
-<h2>Why it matters</h2>
-<p>Palaeoecology moving from descriptive to quantitative:</p>
+<section id="the-question-is-the-past-recoverable-from-the-data" class="slide level2">
+<h2>The question: is the past recoverable from the data?</h2>
+<div class="columns">
+<div class="column">
+<h3 id="why-it-matters">Why it matters</h3>
 <ul>
+<li><p>Palaeoecology moving from descriptive to quantitative</p></li>
 <li><p>Palaeoecology to inform the future requires robust statistical approaches</p></li>
-<li><p>One method to assess environmental uncertainties, sampling strategies and statistical methods is in simulation</p></li>
+<li><p>Advances in lab methods, data availability, and statistics is making more</p></li>
 </ul>
-</section>
-<section id="approach" class="slide level2">
-<h2>Approach</h2>
+</div><div class="column">
+<h3 id="what-we-can-do-about-it">What we can do about it</h3>
 <ul>
-<li><p>Simulate core samples that mimic the statistical properties of empirica data</p></li>
+<li>One method to assess uncertainties is in simulation</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="approach-and-take-home" class="slide level2">
+<h2>Approach and take-home</h2>
+<ul>
+<li><p>Simulate core samples containing proxies that mimic the statistical properties of empirica data</p></li>
 <li><p>Simulate uncertainties: process and observer error that affect the data</p></li>
 <li><p>Assess how <em>statistical inferences</em> are affected by those uncertainties</p></li>
 </ul>
@@ -375,19 +394,15 @@
 <li><p>Virtual ecology <span class="citation" data-cites="zurell2010">(<a href="#/ref-zurell2010" role="doc-biblioref" onclick="return false;">Zurell et al. 2010</a>)</span></p></li>
 <li><p>Proxy system modelling <span class="citation" data-cites="evans2013">(<a href="#/ref-evans2013" role="doc-biblioref" onclick="return false;">Evans et al. 2013</a>)</span></p></li>
 <li><p>Pseudoproxy experiments <span class="citation" data-cites="mann2002">(<a href="#/ref-mann2002" role="doc-biblioref" onclick="return false;">Mann and Rutherford 2002</a>)</span></p></li>
-<li></li>
+<li><p>Other key refs: <span class="citation" data-cites="blaauw2010a">Blaauw, Bennett, and Christen (<a href="#/ref-blaauw2010a" role="doc-biblioref" onclick="return false;">2010</a>)</span> and <span class="citation" data-cites="williams2011">Williams, Blois, and Shuman (<a href="#/ref-williams2011" role="doc-biblioref" onclick="return false;">2011</a>)</span></p></li>
 </ul>
 </section>
 <section id="virtual-ecology" class="slide level2">
 <h2>Virtual ecology</h2>
 <p>Virtual ecology is a framework for assessing sampling and analytical methods in simulation consisting of:</p>
 <ol type="1">
-<li>an ecological model that generates synthetic data</li>
-</ol>
-<ol type="i">
-<li>a degradation model (environmental processes)</li>
-</ol>
-<ol start="2" type="1">
+<li><p>an ecological model that generates synthetic data</p>
+<p>1a. a degradation model</p></li>
 <li><p>a simulated observational process (a sampling model) that samples the synthetic data</p></li>
 <li><p>an analytical process or statistical model applied to both sets of data</p></li>
 <li><p>an assessment of the results</p></li>
@@ -402,6 +417,7 @@
 <li><p>Simulated data and observational processes</p></li>
 <li><p>Advantage of benchmark/control data</p></li>
 <li><p>Advantage of replication</p></li>
+<li><p>Able to systematically introduce uncertainty</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h4 id="perfect-world-imperfect-knowledge">Perfect world, imperfect knowledge</h4>
@@ -425,10 +441,10 @@
 <img data-src="./images/psm.png" class="r-stretch quarto-figure-center"><p class="caption">Proxy Ststem Modelling framework, from <span class="citation" data-cites="evans2013">Evans et al. (<a href="#/ref-evans2013" role="doc-biblioref" onclick="return false;">2013</a>)</span></p></section>
 <section id="pseudoproxy-experiments" class="slide level2">
 <h2>Pseudoproxy experiments</h2>
-<p>Borrowing the term psedoproxies from climateology:</p>
+<p>Borrowing the term “<em>psedoproxies</em>” from climateology:</p>
 <ul>
 <li><p>pseudoproxies are simulated data or modified observational data</p></li>
-<li><p>mimic the statistical properties of empirical data (hopefully)</p></li>
+<li><p>mimic the statistical properties of empirical data</p></li>
 <li><p>pseudoproxy experiments are similar to virtual ecology</p></li>
 </ul>
 </section>
@@ -446,7 +462,7 @@
 <section id="simulating-pseudoproxies" class="slide level2 scrollable">
 <h2>Simulating pseudoproxies</h2>
 <ul>
-<li><p>represent a multi-driver environment that allows for driver interactions and synergies (<span class="citation" data-cites="williams2011">Williams, Blois, and Shuman (<a href="#/ref-williams2011" role="doc-biblioref" onclick="return false;">2011</a>)</span>)</p></li>
+<li><p>represent a multi-driver environment that allows for driver interactions and synergies</p></li>
 <li><p>include underlying ecological dynamics to generate a multi-species pseudoproxy archive that can undergo community turnover</p></li>
 <li><p>recreate core formation processes of accumulation rates and time-span and virtually recreate the observational processes</p></li>
 </ul>
@@ -454,20 +470,19 @@
 <section id="simulating-pseudoproxies-1" class="slide level2 scrollable">
 <h2>Simulating pseudoproxies</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Model vis</a></li><li><a href="#tabset-1-2">‘Error-free’</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Model visualistion</a></li><li><a href="#tabset-1-2">‘Error-free’ output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./images/walk_lin_gradual_grid_plot.png" style="width:60.0%"></p>
-<p></p><figcaption>Simulating pseudoproxies</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./images/taxa_plot_N.png"></p>
+<p><img data-src="./images/taxa_plot_N.png" style="width:90.0%"></p>
 <p></p><figcaption>Partial output of 20 randomly selected species</figcaption><p></p>
 </figure>
 </div>
@@ -479,35 +494,29 @@
 <h2>Ruining pseudoproxies</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
-<ul>
-<li><p>Example species from simgle replicate</p></li>
-<li><p>Mixing</p></li>
-<li><p>Mixing + sub-sampling</p></li>
-<li><p>Mixing + sub-sampling + proxy counting</p></li>
-</ul>
+<p>A. Example species from single replicate</p>
+<p>B. Mixing</p>
+<p>C. Mixing + sub-sampling</p>
+<p>D. Mixing + sub-sampling + proxy counting</p>
 </div><div class="column" style="width:70%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="./images/degradation_process_disturbed_for_export.png" style="width:80.0%"></p>
-<p></p><figcaption>Degradation process</figcaption><p></p>
-</figure>
-</div>
 </div>
 </div>
 </section>
-<section id="ruined-pseudoproxies" class="slide level2">
+<section id="ruined-pseudoproxies" class="slide level2 scrollable">
 <h2>Ruined pseudoproxies</h2>
-
-<img data-src="./images/taxa_plot_mix10_sam10_cnt400.png" class="r-stretch quarto-figure-center"><p class="caption">Pseudoproxy output after mixing, sub-sampling and proxy counting</p></section>
+<p><img data-src="./images/taxa_plot_mix10_sam10_cnt400.png" style="height:120.0%"></p>
+</section>
 <section id="analyses" class="slide level2">
 <h2>Analyses</h2>
-<p>Ok, now we have generated the data, let’s analyse it. Each replicate results in 1210 datasets from the ‘error-free’ to the most uncertain:</p>
+<p>Ok, now we have generated the data, let’s analyse it. Two analyses:</p>
 <ul>
 <li><p>Fisher Information</p></li>
 <li><p>Principal curves</p></li>
 </ul>
+<p>Demonstrating two scenarios with different driving environments.</p>
 </section>
-<section id="scenario-1" class="slide level2">
+<section id="scenario-1" class="slide level2 scrollable">
 <h2>Scenario 1</h2>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Pseudoproxies</a></li><li><a href="#tabset-2-2">Fisher Information</a></li><li><a href="#tabset-2-3">Principal curves</a></li></ul>
@@ -515,7 +524,7 @@
 <div id="tabset-2-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./images/archive_half_half_walk_lin_forces.png"></p>
+<p><img data-src="./images/archive_half_half_walk_lin_forces.png" style="width:200.0%"></p>
 </figure>
 </div>
 </div>
@@ -536,7 +545,7 @@
 </div>
 </div>
 </section>
-<section id="scenario-2" class="slide level2">
+<section id="scenario-2" class="slide level2 scrollable">
 <h2>Scenario 2</h2>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Pseudoproxies</a></li><li><a href="#tabset-3-2">Fisher Information</a></li><li><a href="#tabset-3-3">Principal curves</a></li></ul>
@@ -544,7 +553,7 @@
 <div id="tabset-3-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./images/archive_half_half_abrupt_forces.png"></p>
+<p><img data-src="./images/archive_half_half_abrupt_forces.png" style="width:200.0%"></p>
 </figure>
 </div>
 </div>
@@ -565,43 +574,59 @@
 </div>
 </div>
 </section>
-<section id="assessing-statistical-inference-across-replicates" class="slide level2 scrollable">
-<h2>Assessing statistical inference across replicates</h2>
+<section id="assessing-uncertainties-across-replicates" class="slide level2">
+<h2>Assessing uncertainties across replicates</h2>
+<p>Each replicate results in 1210 datasets from the ‘error-free’ to the most uncertain, per scenario <span class="emoji" data-emoji="scream">😱</span>.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Across <em>replicates</em> for each of the 1210 datasets:</p>
+<ol type="1">
+<li><p>extract features from the FI and PrC</p>
+<ul>
+<li>feature analysis reduces the FI and PrC to one dimension</li>
+</ul></li>
+<li><p>calculate the distance between each dataset from the ‘error-free’ to the most uncertain</p></li>
+<li><p>make cool visulisations!</p></li>
+</ol>
+</div><div class="column" style="width:60%;">
+<p><img data-src="./images/miracle_occurs.png" style="height:50.0%"></p>
+</div>
+</div>
+</section>
+<section id="assessing-uncertainties-across-replicates-1" class="slide level2">
+<h2>Assessing uncertainties across replicates</h2>
+<p><strong>Quantify the difference between the ‘error-free’ archive and each level of uncertainty.</strong> The following is an example from scenario 1</p>
+</section>
+<section id="assessing-uncertainties-across-replicates-2" class="slide level2 scrollable">
+<h2>Assessing uncertainties across replicates</h2>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Tab 1</a></li><li><a href="#tabset-4-2">Tab 2</a></li><li><a href="#tabset-4-3">Tab 3</a></li></ul>
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Single uncertainty</a></li><li><a href="#tabset-4-2">Two combined</a></li><li><a href="#tabset-4-3">All three!</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="./images/walk_step_fisher_metrics_dotplot.png"></p>
-<p></p><figcaption>Simulating pseudoproxies</figcaption><p></p>
-</figure>
-</div>
 </div>
 <div id="tabset-4-2">
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="./images/walk_step_fisher_two_dim_metrics_mean_plot.png"></p>
-<p></p><figcaption>Things</figcaption><p></p>
-</figure>
-</div>
 </div>
 <div id="tabset-4-3">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./images/walk_step_fisher_three_dim_grid_plot.png"></p>
-<p></p><figcaption>Things</figcaption><p></p>
-</figure>
-</div>
+<p><img data-src="./images/walk_step_fisher_three_dim_grid_plot.png" style="height:70.0%"></p>
 </div>
 </div>
 </div>
 </section>
 <section id="application-to-empirical" class="slide level2">
 <h2>Application to empirical</h2>
+<p>Simulation methods can be integrated with empirical studies to:</p>
+<ul>
+<li><p>a priori help shape field sampling methods: e.g., number of core samples (across a region or local replication) required for a given research question.</p></li>
+<li><p>understand the sub-sampling and count resolution required to increase the likelihood of detecting a hypothesised signal in the data.</p></li>
+<li><p>accompany empirical study to test hypotheses about the underlying dynamics that may cause an observed pattern in the data.</p></li>
+<li><p>assess whether inferences made from the data are robust to uncertainty.</p></li>
+</ul>
 </section>
-<section id="what-i-havent-said" class="slide level2">
-<h2>What I haven’t said</h2>
+<section id="what-i-havent-covered" class="slide level2">
+<h2>What I haven’t covered</h2>
+<p>“All models are wrong, some are useful” <span class="citation" data-cites="box1979">Box (<a href="#/ref-box1979" role="doc-biblioref" onclick="return false;">1979</a>)</span></p>
 <ul>
 <li><p>Assessing error rates</p></li>
 <li><p>Chronological uncertainty</p></li>
@@ -609,7 +634,11 @@
 </section>
 <section id="acknowledgements" class="slide level2">
 <h2>Acknowledgements</h2>
-<p>George, Janet, Jack, Tony, Biological heritage, NSF</p>
+<ul>
+<li><p>George Perry and Janet Wilmshurs</p></li>
+<li><p>Jack Williams and Tony Ives</p></li>
+<li><p>Biological heritage and the National Science Foundation</p></li>
+</ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -617,6 +646,12 @@
 
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-blaauw2010a" class="csl-entry" role="doc-biblioentry">
+Blaauw, Maarten, K. D. Bennett, and J. Andrés Christen. 2010. <span>“Random <span>Walk Simulations</span> of <span>Fossil Proxy Data</span>.”</span> <em>The Holocene</em> 20 (4): 645–49. <a href="https://doi.org/10.1177/0959683609355180">https://doi.org/10.1177/0959683609355180</a>.
+</div>
+<div id="ref-box1979" class="csl-entry" role="doc-biblioentry">
+Box, G. E. P. 1979. <span>“Robustness in the <span>Strategy</span> of <span>Scientific Model Building</span>.”</span> In <em>Robustness in <span>Statistics</span></em>, 201–36. <span>Elsevier</span>. <a href="https://doi.org/10.1016/B978-0-12-438150-6.50018-2">https://doi.org/10.1016/B978-0-12-438150-6.50018-2</a>.
+</div>
 <div id="ref-evans2013" class="csl-entry" role="doc-biblioentry">
 Evans, M. N., S. E. Tolwinski-Ward, D. M. Thompson, and K. J. Anchukaitis. 2013. <span>“Applications of <span>Proxy System Modeling</span> in <span>High Resolution Paleoclimatology</span>.”</span> <em>Quaternary Science Reviews</em> 76 (September): 16–28. <a href="https://doi.org/10.1016/j.quascirev.2013.05.024">https://doi.org/10.1016/j.quascirev.2013.05.024</a>.
 </div>
