@@ -337,8 +337,9 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" data-background-color="#1a1e43" class="center">
   <h1 class="title">Pseudoproxy modelling of uncertainties in palaeoecological data.</h1>
+  <p class="subtitle"><a href="https://quinnasena.github.io/palaeo_in_R_2022_talk_QA/slides/slides.html#/title-slide">Link to slides</a></p>
   <p class="author">Quinn Asena, George Perry, Janet Wilmshurst</p>
   <p class="institute">University of Auckland, UW-Madison</p>
   <p class="date">11/2/22</p>
@@ -383,7 +384,7 @@
 <section id="approach-and-take-home" class="slide level2">
 <h2>Approach and take-home</h2>
 <ul>
-<li><p>Simulate core samples containing proxies that mimic the statistical properties of empirica data</p></li>
+<li><p>Simulate core samples containing proxies that mimic the statistical properties of empirical data</p></li>
 <li><p>Simulate uncertainties: process and observer error that affect the data</p></li>
 <li><p>Assess how <em>statistical inferences</em> are affected by those uncertainties</p></li>
 </ul>
@@ -394,7 +395,11 @@
 <li><p>Virtual ecology <span class="citation" data-cites="zurell2010">(<a href="#/ref-zurell2010" role="doc-biblioref" onclick="return false;">Zurell et al. 2010</a>)</span></p></li>
 <li><p>Proxy system modelling <span class="citation" data-cites="evans2013">(<a href="#/ref-evans2013" role="doc-biblioref" onclick="return false;">Evans et al. 2013</a>)</span></p></li>
 <li><p>Pseudoproxy experiments <span class="citation" data-cites="mann2002">(<a href="#/ref-mann2002" role="doc-biblioref" onclick="return false;">Mann and Rutherford 2002</a>)</span></p></li>
-<li><p>Other key refs: <span class="citation" data-cites="blaauw2010a">Blaauw, Bennett, and Christen (<a href="#/ref-blaauw2010a" role="doc-biblioref" onclick="return false;">2010</a>)</span> and <span class="citation" data-cites="williams2011">Williams, Blois, and Shuman (<a href="#/ref-williams2011" role="doc-biblioref" onclick="return false;">2011</a>)</span></p></li>
+<li><p>Other key refs:</p>
+<ul>
+<li><p><span class="citation" data-cites="blaauw2010a">Blaauw, Bennett, and Christen (<a href="#/ref-blaauw2010a" role="doc-biblioref" onclick="return false;">2010</a>)</span></p></li>
+<li><p><span class="citation" data-cites="williams2011">Williams, Blois, and Shuman (<a href="#/ref-williams2011" role="doc-biblioref" onclick="return false;">2011</a>)</span></p></li>
+</ul></li>
 </ul>
 </section>
 <section id="virtual-ecology" class="slide level2">
@@ -408,13 +413,14 @@
 <li><p>an assessment of the results</p></li>
 </ol>
 </section>
-<section id="virtual-ecology-1" class="slide level2">
-<h2>Virtual ecology</h2>
+<section id="virtual-ecology-and-empirical-ecology" class="slide level2">
+<h2>Virtual ecology and empirical ecology</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h4 id="perfect-knowledege-imperfect-world">Perfect knowledege, imperfect world</h4>
 <ul>
-<li><p>Simulated data and observational processes</p></li>
+<li><p>known drivers and responses</p></li>
+<li><p>known environmental and observational processes</p></li>
 <li><p>Advantage of benchmark/control data</p></li>
 <li><p>Advantage of replication</p></li>
 <li><p>Able to systematically introduce uncertainty</p></li>
@@ -441,28 +447,24 @@
 <img data-src="./images/psm.png" class="r-stretch quarto-figure-center"><p class="caption">Proxy Ststem Modelling framework, from <span class="citation" data-cites="evans2013">Evans et al. (<a href="#/ref-evans2013" role="doc-biblioref" onclick="return false;">2013</a>)</span></p></section>
 <section id="pseudoproxy-experiments" class="slide level2">
 <h2>Pseudoproxy experiments</h2>
-<p>Borrowing the term “<em>psedoproxies</em>” from climateology:</p>
+<p>Borrowing the term “<em>pseudoproxies</em>” from climatology:</p>
 <ul>
 <li><p>pseudoproxies are simulated data or modified observational data</p></li>
 <li><p>mimic the statistical properties of empirical data</p></li>
 <li><p>pseudoproxy experiments are similar to virtual ecology</p></li>
 </ul>
 </section>
-<section id="simulating-an-archive" class="slide level2">
-<h2>Simulating an archive</h2>
-<p>Simulate:</p>
-<ol type="1">
-<li><p>environmental driver patterns over time (driver model)</p></li>
-<li><p>species that respond to the drivers (sensor model)</p></li>
-<li><p>accumulation rate and time-span and degradation (archive model)</p></li>
-<li><p>observational process (sampling model)</p></li>
-<li><p>analyse the pseudoproxies (assessment)</p></li>
-</ol>
+
+<section>
+<section id="building-the-model" class="title-slide slide level1 center">
+<h1>Building the model</h1>
+
 </section>
 <section id="simulating-pseudoproxies" class="slide level2 scrollable">
 <h2>Simulating pseudoproxies</h2>
+<p>We set out to:</p>
 <ul>
-<li><p>represent a multi-driver environment that allows for driver interactions and synergies</p></li>
+<li><p>Use multiple interacting drivers</p></li>
 <li><p>include underlying ecological dynamics to generate a multi-species pseudoproxy archive that can undergo community turnover</p></li>
 <li><p>recreate core formation processes of accumulation rates and time-span and virtually recreate the observational processes</p></li>
 </ul>
@@ -499,13 +501,22 @@
 <p>C. Mixing + sub-sampling</p>
 <p>D. Mixing + sub-sampling + proxy counting</p>
 </div><div class="column" style="width:70%;">
-<p><img data-src="./images/degradation_process_disturbed_for_export.png" style="width:80.0%"></p>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="./images/degradation_process_disturbed_for_export.png" style="width:90.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="ruined-pseudoproxies" class="slide level2 scrollable">
 <h2>Ruined pseudoproxies</h2>
 <p><img data-src="./images/taxa_plot_mix10_sam10_cnt400.png" style="height:120.0%"></p>
+</section></section>
+<section>
+<section id="applying-the-model" class="title-slide slide level1 center">
+<h1>Applying the model</h1>
+
 </section>
 <section id="analyses" class="slide level2">
 <h2>Analyses</h2>
@@ -589,14 +600,15 @@
 <li><p>make cool visulisations!</p></li>
 </ol>
 </div><div class="column" style="width:60%;">
-<p><img data-src="./images/miracle_occurs.png" style="height:50.0%"></p>
+<p><img data-src="./images/miracle_occurs.png" style="width:80.0%"></p>
 </div>
 </div>
 </section>
 <section id="assessing-uncertainties-across-replicates-1" class="slide level2">
 <h2>Assessing uncertainties across replicates</h2>
-<p><strong>Quantify the difference between the ‘error-free’ archive and each level of uncertainty.</strong> The following is an example from scenario 1</p>
-</section>
+<p><strong>Quantify the difference between the ‘error-free’ archive and each level of uncertainty.</strong> The following is an example from scenario 1 using Fisher Information.</p>
+
+<img data-src="./images/matrix_library.png" class="r-stretch quarto-figure-center"></section>
 <section id="assessing-uncertainties-across-replicates-2" class="slide level2 scrollable">
 <h2>Assessing uncertainties across replicates</h2>
 <div class="panel-tabset">
@@ -630,14 +642,15 @@
 <ul>
 <li><p>Assessing error rates</p></li>
 <li><p>Chronological uncertainty</p></li>
+<li><p>Extend underlying dynamics to ask specific questions (e.g., resilience)</p></li>
 </ul>
 </section>
 <section id="acknowledgements" class="slide level2">
 <h2>Acknowledgements</h2>
 <ul>
-<li><p>George Perry and Janet Wilmshurs</p></li>
-<li><p>Jack Williams and Tony Ives</p></li>
-<li><p>Biological heritage and the National Science Foundation</p></li>
+<li><p>George Perry (University of Auckland) and Janet Wilmshurs (University of Auckland, and Manaaki Whenua – Landcare Research)</p></li>
+<li><p>Jack Williams and Tony Ives (University of Wisconsin Madison)</p></li>
+<li><p>Biological heritage Science Challenge (NZ) and the National Science Foundation (USA)</p></li>
 </ul>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
@@ -665,7 +678,7 @@ Williams, John W., Jessica L. Blois, and Bryan N. Shuman. 2011. <span>“Extrins
 Zurell, Damaris, Uta Berger, Juliano S. Cabral, Florian Jeltsch, Christine N. Meynard, Tamara Münkemüller, Nana Nehrbass, et al. 2010. <span>“The <span>Virtual Ecologist Approach</span>: <span>Simulating Data</span> and <span>Observers</span>.”</span> <em>Oikos</em> 119 (4): 622–35. <a href="https://doi.org/10.1111/j.1600-0706.2009.18284.x">https://doi.org/10.1111/j.1600-0706.2009.18284.x</a>.
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

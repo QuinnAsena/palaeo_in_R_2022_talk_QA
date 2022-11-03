@@ -1,5 +1,6 @@
 ---
 title: "Pseudoproxy modelling of uncertainties in palaeoecological data."
+subtitle: "[Link to slides](https://quinnasena.github.io/palaeo_in_R_2022_talk_QA/slides/slides.html#/title-slide)"
 author: "Quinn Asena, George Perry, Janet Wilmshurst"
 institute: "University of Auckland, UW-Madison"
 date: today
@@ -16,8 +17,8 @@ format:
     slide-number: c/t
     width: 1600
     height: 900
-# title-slide-attributes:
-#  data-background-color: "#36365a"
+title-slide-attributes:
+  data-background-color: "#1a1e43"
 ---
 
 ## The problem
@@ -100,7 +101,9 @@ Virtual ecology is a framework for assessing sampling and analytical methods in 
 ::: {.column width="50%"}
 #### Perfect knowledege, imperfect world
 
-- Simulated data and observational processes
+- known drivers and responses
+
+- known environmental and observational processes
 
 - Advantage of benchmark/control data
 
@@ -136,7 +139,7 @@ Describes the process by which environmental change is recorded as an observable
 
 ## Pseudoproxy experiments
 
-Borrowing the term "*psedoproxies*" from climateology:
+Borrowing the term "*pseudoproxies*" from climatology:
 
 - pseudoproxies are simulated data or modified observational data
 
@@ -145,7 +148,7 @@ Borrowing the term "*psedoproxies*" from climateology:
 - pseudoproxy experiments are similar to virtual ecology
 
 
-## Simulating a pseudoproxy archive
+## Simulating a pseudoproxy archive {visibility="hidden"}
 
 Simulate:
 
@@ -159,10 +162,13 @@ Simulate:
 
 5. analyse the pseudoproxies (assessment)
 
+# Building the model
 
 ## Simulating pseudoproxies {.scrollable}
 
-- represent a multi-driver environment that allows for driver interactions and synergies
+We set out to:
+
+- Use multiple interacting drivers
 
 - include underlying ecological dynamics to generate a multi-species pseudoproxy archive that can undergo community turnover
 
@@ -192,13 +198,15 @@ D. Mixing + sub-sampling + proxy counting
 :::
 
 ::: {.column width="70%"}
-![](./images/degradation_process_disturbed_for_export.png){width="80%"}
+![](./images/degradation_process_disturbed_for_export.png){width="90%" fig-align="right"}
 :::
 ::::
 
 ## Ruined pseudoproxies {.scrollable}
 
 ![](./images/taxa_plot_mix10_sam10_cnt400.png){height="120%"}
+
+# Applying the model
 
 ## Analyses
 
@@ -255,13 +263,15 @@ Across *replicates* for each of the 1210 datasets:
 :::
 
 :::{.column width="60%"}
-![](./images/miracle_occurs.png){height="50%"}
+![](./images/miracle_occurs.png){width="80%"}
 :::
 ::::
 
 ## Assessing uncertainties across replicates
 
-**Quantify the difference between the 'error-free' archive and each level of uncertainty.** The following is an example from scenario 1
+**Quantify the difference between the 'error-free' archive and each level of uncertainty.** The following is an example from scenario 1 using Fisher Information.
+
+![](./images/matrix_library.png){fig-align="center"}
 
 
 ## Assessing uncertainties across replicates {.scrollable}
@@ -299,13 +309,15 @@ Simulation methods can be integrated with empirical studies to:
 
 - Chronological uncertainty
 
+- Extend underlying dynamics to ask specific questions (e.g., resilience)
+
 ## Acknowledgements
 
-- George Perry and Janet Wilmshurs
+- George Perry (University of Auckland) and Janet Wilmshurs (University of Auckland, and Manaaki Whenua – Landcare Research)
 
-- Jack Williams and Tony Ives
+- Jack Williams and Tony Ives (University of Wisconsin Madison)
 
-- Biological heritage and the National Science Foundation
+- Biological heritage Science Challenge (NZ) and the National Science Foundation (USA)
  
 
 ## References
