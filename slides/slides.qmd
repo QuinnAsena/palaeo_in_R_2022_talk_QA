@@ -202,7 +202,7 @@ D. Mixing + sub-sampling + proxy counting
 :::
 
 ::: {.column width="70%"}
-![](./images/degradation_process_disturbed_for_export.png){width="90%" fig-align="right"}
+![](./images/degradation_process_disturbed_for_export.png){width="80%" fig-align="right"}
 :::
 ::::
 
