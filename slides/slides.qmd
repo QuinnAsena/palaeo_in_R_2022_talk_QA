@@ -168,11 +168,15 @@ Simulate:
 
 We set out to:
 
-- Use multiple interacting drivers
+- Represent multiple interacting drivers
 
-- include underlying ecological dynamics to generate a multi-species pseudoproxy archive that can undergo community turnover
+- Include underlying ecological dynamics that can undergo community turnover
 
-- recreate core formation processes of accumulation rates and time-span and virtually recreate the observational processes
+- Generate a multi-species pseudoproxy
+
+- Recreate core formation processes of accumulation rates and time-span
+
+- Virtually recreate the observational processes
 
 
 ## Simulating pseudoproxies {.scrollable}
