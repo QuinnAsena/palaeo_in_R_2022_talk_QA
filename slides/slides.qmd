@@ -48,7 +48,7 @@ Proxy data are the product of multiple sources of uncertainty
 
 - Palaeoecology to inform the future requires robust statistical approaches
 
-- Advances in lab methods, data availability, and statistics is making more
+- Advances in lab methods, data availability, and statistics are making more inferences possible
 :::
 
 :::{.column}
